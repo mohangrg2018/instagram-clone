@@ -5,7 +5,7 @@ import RightSidebar from "./RightSidebar";
 
 const HomePage = () => {
   return (
-    <div className="grid grid-cols-[80px,1fr,300px] xl:grid-cols-[250px,1fr,400px]">
+    <div className="grid grid-cols-[80px,1fr] xl:grid-cols-[250px,1fr,400px]">
       <Header />
       <MiddleContent />
       <RightSidebar />

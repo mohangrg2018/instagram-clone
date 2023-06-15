@@ -18,7 +18,7 @@ import { CiMenuBurger } from "react-icons/ci";
 const Header = () => {
   const { data: session } = useSession();
   return (
-    <section className="py-10 pl-5 h-screen sticky top-0 border-r border-gray-300 hidden lg:inline-block">
+    <section className="py-10 pl-5 h-screen sticky top-0 border-r border-gray-300 hidden sm:inline-block">
       <Link href="/">
         <Image
           src="/Instagram_logo.svg.png"
@@ -58,7 +58,11 @@ const Header = () => {
           <h2>Create</h2>
         </Link>
         <Link href="/" className="nav__link">
-          <img src={session?.user?.image} alt="Profile Picture" />
+          <img
+            src={session?.user?.image}
+            alt="Profile Picture"
+            className="w-[30px] object-cover rounded-full"
+          />
           <h2>Profile</h2>
         </Link>
       </div>
