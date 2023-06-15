@@ -14,4 +14,8 @@
   .nav__link h2 {
     @apply hidden xl:inline-block;
   }
+
+  .post__icon {
+    @apply text-2xl cursor-pointer;
+  }
 }
