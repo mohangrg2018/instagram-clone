@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .nav__link {
+    @apply flex items-center gap-4;
+  }
+
+  .nav__icon {
+    @apply text-3xl;
+  }
+
+  .nav__link h2 {
+    @apply hidden xl:inline-block;
+  }
+}
