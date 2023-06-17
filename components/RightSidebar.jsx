@@ -1,4 +1,5 @@
 import { signOut, useSession } from "next-auth/react";
+import Suggestion from "./Suggestion";
 
 const RightSidebar = () => {
   const { data: session } = useSession();
@@ -25,6 +26,9 @@ const RightSidebar = () => {
             Sign Out
           </button>
         </div>
+      </div>
+      <div className="mt-10">
+        <Suggestion />
       </div>
     </section>
   );
