@@ -1,5 +1,6 @@
 "use client";
 
+import { modalState } from "@/atom/ModalAtom";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,9 +15,13 @@ import {
   AiOutlineVideoCameraAdd,
 } from "react-icons/ai";
 import { CiMenuBurger } from "react-icons/ci";
+import { useRecoilState } from "recoil";
 
 const Header = () => {
   const { data: session } = useSession();
+
+  const [open, setOpen] = useRecoilState(modalState);
+
   return (
     <section className="py-10 pl-5 h-screen sticky top-0 border-r border-gray-300 hidden sm:inline-block">
       <Link href="/">
@@ -53,10 +58,12 @@ const Header = () => {
           <AiOutlineHeart className="nav__icon" />
           <h2>Notifications</h2>
         </Link>
-        <Link href="/" className="nav__link">
+
+        <Link href="/" onClick={() => setOpen(true)} className="nav__link">
           <AiOutlinePlusSquare className="nav__icon" />
           <h2>Create</h2>
         </Link>
+
         <Link href="/" className="nav__link">
           <img
             src={session?.user?.image}
